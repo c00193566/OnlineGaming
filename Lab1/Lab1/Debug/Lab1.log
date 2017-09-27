@@ -1,0 +1,4 @@
+﻿  Source.cpp
+  Net.cpp
+c:\users\gameuser\desktop\college\online gaming tech\lab1\lab1\net.cpp(3): fatal error C1083: Cannot open include file: 'Log.h': No such file or directory
+  Generating Code...
