@@ -1,4 +1,3 @@
 ﻿  Source.cpp
-  Net.cpp
-c:\users\gameuser\desktop\college\online gaming tech\lab1\lab1\net.cpp(3): fatal error C1083: Cannot open include file: 'Log.h': No such file or directory
-  Generating Code...
+  Lab1.vcxproj -> C:\Users\gameuser\Desktop\College\Online Gaming Tech\Lab1\Debug\Lab1.exe
+  Lab1.vcxproj -> C:\Users\gameuser\Desktop\College\Online Gaming Tech\Lab1\Debug\Lab1.pdb (Partial PDB)

@@ -1,7 +1,7 @@
 #include "Net.h"
 #include <winsock2.h>
+//#include "Log.h"
 #include <iostream>
-#include "Log.h"
 
 using namespace std;
 
@@ -12,7 +12,7 @@ void Net::initialise()
 	if (WSAStartup(MAKEWORD(2,2),&wsaData) !=0)
 	{
 		//error!
-		Log::writeToLog("Failed to initialise winsock");
+		//Log::writeToLog("Failed to initialise winsock");
 	}
 }
 
@@ -35,10 +35,10 @@ void Net::setupUDP(int port, char * ip)
 		//create UDP socket and bind to my_addr
 		sockfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
 		if(sockfd== INVALID_SOCKET)
-			Log::writeToLog("Call to socket() failed");
+			//Log::writeToLog("Call to socket() failed");
 
 		if( bind(sockfd, (struct sockaddr *)&my_addr, sizeof my_addr) == SOCKET_ERROR)
-			Log::writeToLog("Call to bind() failed");
+			//Log::writeToLog("Call to bind() failed");
 
 		//clear out the socket sets
 		FD_ZERO(&master);    // clear the master and temp sets
@@ -54,7 +54,7 @@ void Net::setupUDP(int port, char * ip)
 		ostringstream s;
 		s<<"ERROR: "<<str<<endl;
 		s<<"ERROR CODE: "<<WSAGetLastError()<<endl;
-		Log::writeToLog(s);
+		//Log::writeToLog(s);
 	}
 	
 }
@@ -86,7 +86,7 @@ int Net::receiveData(char* message)
 	if(result==-1)
 	{
 		s << "Problem with select call, error no. "<<WSAGetLastError();
-		Log::writeToLog(s);
+		//Log::writeToLog(s);
 		s.str("");
 	}
 	if (result>0)
@@ -117,7 +117,7 @@ int Net::receiveData(char* message)
 				//if(bytes_received != -1)
 					//	s << message;
 
-				Log::writeToLog(s);				
+				//Log::writeToLog(s);				
 				
 			}
 		
